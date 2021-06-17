@@ -14,21 +14,26 @@ function getEle (id) {
     return document.getElementById(id);
 }
 
-
 function timSoBai1 () {
-    sumBai1 = 0;
-   
+    var showKqBai1 = getEle('showKqBai1');
+    var sumBai1 = 0;   
     for (var numBai1 = 0 ; numBai1 <= 1000; ++numBai1) {
         sumBai1 += numBai1;
         if (sumBai1 > 10000) {
-            break
+            break;
         }
-    };
-    showKqBai1.style.display = 'block';
-    showKqBai1.innerHTML = `<h4 style = "background-color: aquamarine;">Số nguyên dương nhỏ nhất: ${numBai1}</h4>`
+    };    
 
+    if (isDisplay) {
+        showKqBai1.innerHTML = ``
+        isDisplay = !isDisplay;
+    }else {
+        showKqBai1.innerHTML = `<h4 style = "background-color: aquamarine; padding-bottom: 10px">Số nguyên dương nhỏ nhất: ${numBai1}</h4>`;
+        isDisplay = !isDisplay;
+    }
+    
 }
-var showKqBai1 = getEle('showKqBai1')
+var isDisplay = false;
 var btnTimSoBai1 = getEle('btnTimSoBai1').addEventListener('click',timSoBai1 )
 
 
@@ -49,14 +54,12 @@ var btnTimSoBai1 = getEle('btnTimSoBai1').addEventListener('click',timSoBai1 )
 var btnTongBai2 = getEle('btnTongBai2');
 var showTongBai2 = getEle('showTongBai2');
 
-btnTongBai2.addEventListener('click', tinhTongBai2)
-
 
 function tinhTongBai2 () {
     var ipSoNBai2 = getEle('ipSoNBai2').value;
     var ipSoXBai2 = getEle('ipSoXBai2').value;
 
-    if (ipSoXBai2 == '' || ipSoNBai2 == '' || isNaN(ipSoXBai2) || ipSoNBai2 < 0 || Number.isInteger(+ipSoNBai2) == false  ) {
+    if (!ipSoXBai2 || !ipSoNBai2 || isNaN(ipSoXBai2) || ipSoNBai2 < 0 || Number.isInteger(+ipSoNBai2) == false  ) {
         alert('Vui lòng nhập lại số  x và n')
     }
     else {
@@ -64,12 +67,15 @@ function tinhTongBai2 () {
         for (var i = 1; i <= ipSoNBai2; i++ ) {
         tongBai2 = tongBai2 + ipSoXBai2**i;
         }    
-        showTongBai2.style.display = 'block';
-        showTongBai2.innerHTML = `<h4"> Kết quả: ${tongBai2} </h4>`
+        showTongBai2.style.display = 'inline-block';
+        showTongBai2.innerHTML = `<h4> Kết quả: ${tongBai2} </h4>`
+
+
     }
 
 }
 
+btnTongBai2.addEventListener('click', tinhTongBai2)
 
 
 /**
@@ -99,6 +105,7 @@ function tinhGiaiThua() {
         showGiaiThua.innerHTML = `<h3> Kết quả: ${giaiThuaBai3}</h3>`;
     }
 }
+
 btnGiaiThua.onclick = tinhGiaiThua;
 
 
@@ -114,15 +121,23 @@ btnGiaiThua.onclick = tinhGiaiThua;
 
 showTaoDiv = getEle('showTaoDiv');
 btnTaoDiv = getEle('btnTaoDiv');
-
+var isDisplayB4 = false;
 function taoTheDiv () {
-
     kqTheDiv = '';
     for ( var i = 1; i <=10; i++) {
         ( i % 2 != 0 ) ? kqTheDiv += `<div style = "background-color: red;">DIV ${i}</div>` : kqTheDiv += `<div style = "background-color: blue;">DIV ${i}</div>`;
      
     }
-    showTaoDiv.innerHTML = kqTheDiv;
+    
+
+    if (!isDisplayB4) {
+        showTaoDiv.innerHTML = kqTheDiv;
+        isDisplayB4 = !isDisplayB4;
+    } else {
+        showTaoDiv.innerHTML = '';
+        isDisplayB4 = !isDisplayB4;
+    }
+
 }
 
 btnTaoDiv.addEventListener('click',taoTheDiv)

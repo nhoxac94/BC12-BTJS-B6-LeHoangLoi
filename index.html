@@ -5,44 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bài tập Javascript buổi 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
+    <div class="baiTapJs container mt-4">
+        <div class="bai1">
+            <h3>Bài 1: Tìm nguyên dương nhỏ nhất  sao cho:
+                1 + 2 + … + n > 10000 </h3>
+            <button id="btnTimSoBai1" class="btn btn-primary my-3 d-inline-block">Số cần tìm!</button>
+            <p id="showKqBai1" class="d-inline-block ms-4"></p>
+        </div>            
+        <div class="bai2">
+            <h3>Bài 2: Tính tổng S(n) = x + x^2 + x^3 + … + x^n </h3>
+            <div class="form-group">
+                <input type="text" id="ipSoXBai2" placeholder="Nhập số x">
+                <p class="form-message"></p>
+            </div>
+            <div class="form-group">
+                <input type="text" id="ipSoNBai2" placeholder="Nhập số n">
+                <p class="form-message"></p>
+            </div>                  
+            <button id="btnTongBai2" class="btn btn-primary">Tính Tổng</button>
+            <p id="showTongBai2" style="display: none; width: 300px; line-height: 30px; background-color:darksalmon;"></p>
+            
+        </div>
     
-    <div class="bai1">
-        <h3>Bài 1: Tìm nguyên dương nhỏ nhất  sao cho:
-            1 + 2 + … + n > 10000 </h3>
-        <button id="btnTimSoBai1">Số cần tìm!</button>
-        <p id="showKqBai1" style="display: none; width: 300px; line-height: 30px;"></p>
-    </div>
-    <br><br>
-
-    <div class="bai2">
-        <h3>Bài 2: Tính tổng S(n) = x + x^2 + x^3 + … + x^n </h3>
-        <input type="text" id="ipSoXBai2" placeholder="Nhập số x">
-        <br><br>
-        <input type="text" id="ipSoNBai2" placeholder="Nhập số n">
-        <br><br>
-        <button id="btnTongBai2">Tính Tổng</button>
-        <p id="showTongBai2" style="display: none; width: 300px; line-height: 30px; background-color:darksalmon;"></p>
-    </div>
-
-    <div class="bai3">
-        <h3>Bài 3: Nhập vào n. Tính giai thừa 1*2*...n  </h3>
-        <input type="text" id="ipSoNBai3" placeholder="Nhập số n">
-        <br><br>
-        <button id="btnGiaiThua">Tính Tổng</button>
-        <p id="showGiaiThua" style="display: none; width: 300px; line-height: 30px; background-color: aqua;"></p>
-    </div>
-    <br>
-    <div class="bai4">
-        <h3>Bài 4: Tạo thẻ div</h3>
-        <button id="btnTaoDiv">Tạo thẻ DIV</button>
-        <p id="showTaoDiv"  style="width: 300px; line-height: 30px; color: white;"></p>
-
-    </div>
+        <div class="bai3">
+            <h3>Bài 3: Nhập vào n. Tính giai thừa 1*2*...n  </h3>
+            <div class="form-group">
+                <input type="text" id="ipSoNBai3" placeholder="Nhập số n">
+                <p class="form-message"></p>
+            </div>            
+            <button id="btnGiaiThua" class="btn btn-primary d-inline-block">Tính Tổng</button>
+            <p id="showGiaiThua" style="display: none; width: 300px; line-height: 30px; background-color: aqua;"></p>
+            
+        </div>
+        <br>
+        <div class="bai4">
+            <h3>Bài 4: Tạo thẻ div</h3>
+            <button id="btnTaoDiv" class="btn btn-primary">Tạo thẻ DIV</button>
+            <p id="showTaoDiv"  style="width: 300px; line-height: 30px; color: white;"></p>
     
+        </div>
+    </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    
     <script src="./main.js"></script>
 </body>
 </html>
